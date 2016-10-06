@@ -6,24 +6,13 @@
 <title>Test</title>
 </head>
 <body>
-<p>Bonjour à vous !</p>
-<p>
-    <%
-        String heure = (String) request.getAttribute("heure");
-        if (heure.equals("jour")) {
-            out.println("Bonjour"); 
-        }
-        else {
-            out.println("Bonsoir");
-        }
-    %>
+<%@ include file="menu.jsp"  %>
+<p>Bonjour  ${ ! empty name ? name : ''  }
+
 </p>
 <p>
-    <%
-        for (int i = 0 ; i < 20 ; i++) {
-            out.println("Une nouvelle ligne !<br />");
-        }
-    %>
-</p>
+${ noms[0] }</p>
+${ noms[1] }</p>
+${ noms[2] }</p>
 </body>
 </html>

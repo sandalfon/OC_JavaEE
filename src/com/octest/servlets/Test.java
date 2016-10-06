@@ -1,4 +1,4 @@
-package com.octest.servelets;
+package com.octest.servlets;
 
 import java.io.IOException;
 
@@ -21,7 +21,10 @@ public class Test extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  request.setAttribute("heure", "jour");
+		String name= request.getParameter("name");
+		  request.setAttribute("name", name);
+		  String[] noms= {"Gilles", "Bob","Bill"};
+		  request.setAttribute("noms", noms);
 	        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 	}
 
