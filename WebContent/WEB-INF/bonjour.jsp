@@ -1,4 +1,3 @@
-<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +5,22 @@
 <title>Test</title>
 </head>
 <body>
-<%@ include file="menu.jsp"  %>
-<p>Bonjour  ${ ! empty name ? name : ''  }
-
-</p>
-<p>
-${ noms[0] }</p>
-${ noms[1] }</p>
-${ noms[2] }</p>
+<p><c:out value="${auteur.nom} & ${auteur.prenom }" >par défaut </c:out></p>
+<c:set var="pseudo" value="Sdlf" scope="page" />
+<p><c:out value="${pseudo }"/></p>
+<c:set var="pseudo" scope="page" >rob</c:set>
+<p><c:out value="${pseudo }"/></p>
+<p>${auteur.actif ? 'Vous êtes actif' : 'inactif' }</p>
+<c:set target="${auteur }" property="nom" value="Thomas"/>
+<p><c:out value="${auteur.nom} & ${auteur.prenom }" >par défaut </c:out></p>
+<c:remove var="pseudo" scope="page"/>
+<p><c:out value="${pseudo }">pas de pseudo</c:out></p>
+<c:if test="${50>100 }" var="variable" scope="session">
+C'est vrai
+</c:if>
+<c:choose>
+<c:when test="${variable }"> Vrai</c:when>
+<c:otherwise>Faux </c:otherwise>
+</c:choose>
 </body>
 </html>

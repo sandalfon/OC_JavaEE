@@ -10,5 +10,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="F:/library/lib/apache-tomcat/apache-tomcat-9.0.0.M10/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="F:/library/lib/jstl/jstl-1.2/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
