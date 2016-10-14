@@ -22,5 +22,15 @@ C'est vrai
 <c:when test="${variable }"> Vrai</c:when>
 <c:otherwise>Faux </c:otherwise>
 </c:choose>
+<c:forEach var="i" begin="0" end="10" step="2">
+    <p>Un message n°<c:out value="${ i }" /> !</p>
+</c:forEach>
+<c:set var="alphabet" value="${['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']}" scope="page" />
+<c:forEach items="${ alphabet }" var="letter" varStatus="status">
+    <p>N°<c:out value="${ status.count }" /> : <c:out value="${ letter }" /> !</p>
+</c:forEach>
+<c:forTokens var="morceau" items="Un élément/Encore un autre élément/Un dernier pour la route" delims="/">
+    <p>${ morceau }</p>
+</c:forTokens>
 </body>
 </html>
